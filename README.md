@@ -11,10 +11,9 @@ conda env update --file=environment.yml
 ```
 
 - Télécharger le dossier dataset et le déplacer à la racine du projet, dans le dossier dataset
-
-- Exécuter l'entièreté du notebook train.py 
-
+- Exécuter le notebook train.py jusqu'à l'entraînement compris
 - Déplacer le fichier best.pt qui se situe dans yolov7/runs/train/{Dernier entraînement effectué}/weights/ à la racine du projet
+- Exécuter le reste du notebook
 
 - Dans un terminal Anaconda, éxécuter la commande ```streamlit run main.py```
 
