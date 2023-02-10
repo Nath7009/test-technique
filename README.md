@@ -3,7 +3,7 @@
 # Installation
 Pour installer le projet avec Anaconda :
 ```
-conda create --name plane --file=environments.yml
+conda create --name plane --file = environment.yml
 conda activate plane
 ```
 
