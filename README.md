@@ -3,13 +3,18 @@
 # Installation
 Pour installer le projet avec Anaconda :
 ```
-conda create --name plane --file = environment.yml
+conda create --name plane
 conda activate plane
+conda install python=3.9
+pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116
+conda env update --file=environment.yml
 ```
 
 - Télécharger le dossier dataset et le déplacer à la racine du projet, dans le dossier dataset
 
 - Exécuter l'entièreté du notebook train.py 
+
+- Déplacer le fichier best.pt qui se situe dans yolov7/runs/train/{Dernier entraînement effectué}/weights/ à la racine du projet
 
 - Dans un terminal Anaconda, éxécuter la commande ```streamlit run main.py```
 
