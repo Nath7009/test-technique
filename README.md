@@ -27,7 +27,7 @@ conda env update --file=environment.yml
 ### Etape 2 : Mise en forme des données
  - Pour travailler avec ce repo, j'ai du remettre en forme les données, d'une part pour les diviser en train/test/valid et d'autre part pour mettre les labels dans le format attendu
  - J'ai utilisé un notebook Jupyter pour prototyper et tester du code rapidement
- - Pour séparer les données, j'ai simplement listé tous les fichiers, mélangé la liste, et découpé en 80% train/10% validation/10% test les données 
+ - Pour séparer les données, j'ai simplement listé tous les fichiers, mélangé la liste, et découpé les données en 80% train/10% validation/10% test 
  - Ensuite, pour convertir les données au bon format, j'ai lu les documents csv avec pandas, et itéré sur chaque ligne, ce processus peut être grandement accéléré par vectorization, et en parallélisant toutes les traitements parce que les fichiers sont tous indépendants
  - J'ai ensuite sauvegardé les fichiers texte dans leurs dossiers de destination
  - Pour les images, je les redimensionne avec openCV à une taille de 640 x 480 pour qu'elles aient tous la même taille, et pour traiter les données plus rapidement
@@ -38,7 +38,7 @@ conda env update --file=environment.yml
  - J'ai utilisé une RTX 3070 pour l'entraînement
  - J'ai entraîné le modèle pour 150 époques, et laissé YOLO garder le meilleur modèle en fonction du recall et MAP
  - Avec plus de temps, j'aurais modifié les hyperparamètres du modèles, le modèle utilisé, de la data augmentation, la taille des images d'entrée et la possibilité d'obtenir un modèle qui fonctionne sur plusieurs tailes d'image, puisque les images d'archive sont de tailles diverses.
- - Il existe aussi de nombreux types de modèles pour faire de l'object detection, comme InternImage, ou différents types e R-CNN
+ - Il existe aussi de nombreux types de modèles pour faire de l'object detection, comme InternImage, ou différents types de R-CNN
  - Pour tester le modèle, j'ai utilisé le fichier test.py du repo, ce qui m'a permis d'avoir les courbes de performances sur le jeu de test, j'ai jugé ces performances acceptables, donc j'ai décidé de passer à l'étape suivante
 
  ![](images/confusion_matrix.png)
@@ -50,7 +50,7 @@ conda env update --file=environment.yml
  
 ### Etape 4 : Inférence sur les archives
  - Pour faire l'inférence, il suffit d'appeler le fichier detect.py, en lui donnant le dossier d'archive de base, le meilleur modèle entraîné à l'étape précédente, et un autre paramètre pour sauvegarder les résultats.
- - L'inférence génère un dossier labels avec, pour chaque image une liste de tous les objets trouvés, avec leur taux de confiance
+ - L'inférence génère un dossier labels, avec pour chaque image, une liste de tous les objets trouvés, avec leur taux de confiance
 
 ### Etape 5 : Interface
  - Etant très familier avec Streamlit, j'ai choisi de développer l'interface en utilisant ce framework
