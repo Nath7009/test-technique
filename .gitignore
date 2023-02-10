@@ -1,3 +1,14 @@
+.vscode/settings.json
+dataset/*
+planes_dataset_yolo/images/train/*
+planes_dataset_yolo/images/test/*
+planes_dataset_yolo/images/valid/*
+planes_dataset_yolo/labels/train/*
+planes_dataset_yolo/labels/test/*
+planes_dataset_yolo/labels/valid/*
+planes_dataset_yolo/labels/train.cache
+planes_dataset_yolo/labels/valid.cache
+yolov7
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
